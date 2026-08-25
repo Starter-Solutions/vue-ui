@@ -69,14 +69,14 @@ npm run build
 
 ## Publishing
 
-Publishing runs automatically when the `version` field in `package.json`
-changes on `main`. For version `0.1.0`, the workflow creates tag `v0.1.0`,
-generates a GitHub Release, validates and builds the package, and publishes it
-to npm. A `package.json` change without a version change performs no release.
+Publishing runs automatically when `package.json` changes on `main`. The
+workflow validates the package and checks npm before publishing, so reruns are
+safe. A new version is published with provenance, tagged as `v<version>`, and
+gets a GitHub Release with generated notes.
 
-Configure npm Trusted Publishing for the `starter-solutions/vue-ui` GitHub
-repository and the workflow filename `publish.yml`. The workflow uses OIDC and
-does not require an `NPM_TOKEN` secret.
+Add the same granular npm access token used by the other Starter Solutions npm
+workflows as the `NPM_TOKEN` repository secret. The token's npm user must have
+permission to publish packages in the `@starter-solutions` scope.
 
 ## License
 
