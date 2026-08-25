@@ -21,21 +21,29 @@ import '@starter-solutions/vue-ui/styles.css'
 Use the root barrel when convenience is more important than import locality:
 
 ```ts
-import { Button, Card, Tree, useDisclosure } from '@starter-solutions/vue-ui'
+import { Button, Card, ThemeSwitch, useDisclosure } from '@starter-solutions/vue-ui'
 ```
 
 Use section barrels:
 
 ```ts
 import { Button, Card } from '@starter-solutions/vue-ui/base'
-import { Tree } from '@starter-solutions/vue-ui/custom'
+import { ThemeSwitch } from '@starter-solutions/vue-ui/custom'
 ```
 
 Or import a component group explicitly:
 
 ```ts
 import { Button } from '@starter-solutions/vue-ui/base/button'
-import { Tree, type TreeNode } from '@starter-solutions/vue-ui/custom/tree'
+import { ThemeSwitch } from '@starter-solutions/vue-ui/custom/theme-switch'
+```
+
+For a flash-free initial theme, initialize it before mounting the Vue app:
+
+```ts
+import { initializeTheme } from '@starter-solutions/vue-ui'
+
+initializeTheme()
 ```
 
 ## Adding shadcn-vue components

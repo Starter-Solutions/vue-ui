@@ -1,1 +1,1 @@
-// Export custom components composed from base components here.
+export * from './theme-switch'

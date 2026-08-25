@@ -25,6 +25,14 @@
             "types": "./dist/components/base/*/index.d.ts",
             "import": "./dist/components/base/*/index.js"
         },
+        "./custom": {
+            "types": "./dist/components/custom/index.d.ts",
+            "import": "./dist/components/custom/index.js"
+        },
+        "./custom/*": {
+            "types": "./dist/components/custom/*/index.d.ts",
+            "import": "./dist/components/custom/*/index.js"
+        },
         "./composables": {
             "types": "./dist/composables/index.d.ts",
             "import": "./dist/composables/index.js"

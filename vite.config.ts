@@ -41,8 +41,10 @@ export default defineConfig({
             entry: {
                 index: 'src/index.ts',
                 'components/base/index': 'src/components/base/index.ts',
+                'components/custom/index': 'src/components/custom/index.ts',
                 'composables/index': 'src/composables/index.ts',
                 ...componentEntries('base'),
+                ...componentEntries('custom'),
             },
             formats: ['es'],
             cssFileName: 'style',
