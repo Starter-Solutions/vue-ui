@@ -1,7 +1,8 @@
 # @starter-solutions/vue-ui
 
-An open-source, shadcn-inspired Vue 3 component and composable package,
-published publicly under the Starter Solutions npm scope.
+Public, open-source Vue 3 components based on the official `shadcn-vue`
+registry. Registry components live in `src/components/base`; project-specific
+components composed from base components live in `src/components/custom`.
 
 ## Install
 
@@ -9,24 +10,46 @@ published publicly under the Starter Solutions npm scope.
 npm install @starter-solutions/vue-ui
 ```
 
-Import the shared styles once in your application entry point:
+Load the compiled Tailwind and theme styles once:
 
 ```ts
 import '@starter-solutions/vue-ui/styles.css'
 ```
 
-Then use components and composables as named imports:
+## Imports
 
-```vue
-<script setup lang="ts">
-import { Button, Card, CardContent, CardHeader, CardTitle, useDisclosure } from '@starter-solutions/vue-ui'
+Use the root barrel when convenience is more important than import locality:
 
-const dialog = useDisclosure()
-</script>
+```ts
+import { Button, Card, Tree, useDisclosure } from '@starter-solutions/vue-ui'
 ```
 
-The components use `data-slot` attributes and CSS custom properties so they
-can be themed without coupling consumers to a particular Tailwind setup.
+Use section barrels:
+
+```ts
+import { Button, Card } from '@starter-solutions/vue-ui/base'
+import { Tree } from '@starter-solutions/vue-ui/custom'
+```
+
+Or import a component group explicitly:
+
+```ts
+import { Button } from '@starter-solutions/vue-ui/base/button'
+import { Tree, type TreeNode } from '@starter-solutions/vue-ui/custom/tree'
+```
+
+## Adding shadcn-vue components
+
+`components.json` maps the shadcn `ui` alias to `@/components/base`, so CLI
+additions and updates never create a `ui` directory:
+
+```bash
+npx shadcn-vue@latest add button
+```
+
+Do not place custom components in `base`: registry updates may overwrite them.
+Build custom components from base primitives under `src/components/custom/<name>`
+and export them from `src/components/custom/index.ts`.
 
 ## Development
 
