@@ -59,11 +59,11 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/starter-solutions/vue-ui.git"
+        "url": "git+https://github.com/Starter-Solutions/vue-ui.git"
     },
-    "homepage": "https://github.com/starter-solutions/vue-ui#readme",
+    "homepage": "https://github.com/Starter-Solutions/vue-ui#readme",
     "bugs": {
-        "url": "https://github.com/starter-solutions/vue-ui/issues"
+        "url": "https://github.com/Starter-Solutions/vue-ui/issues"
     },
     "publishConfig": {
         "access": "public",
