@@ -1,5 +1,3 @@
-import './styles.css'
-
 export * from './components/base'
 export * from './components/custom'
 export * from './composables'
