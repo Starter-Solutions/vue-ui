@@ -37,12 +37,14 @@ export default defineConfig({
         }),
     ],
     build: {
+        cssCodeSplit: true,
         lib: {
             entry: {
                 index: 'src/index.ts',
                 'components/base/index': 'src/components/base/index.ts',
                 'components/custom/index': 'src/components/custom/index.ts',
                 'composables/index': 'src/composables/index.ts',
+                style: 'src/styles.css',
                 ...componentEntries('base'),
                 ...componentEntries('custom'),
             },
