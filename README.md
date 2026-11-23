@@ -16,6 +16,17 @@ Load the compiled Tailwind and theme styles once:
 import '@starter-solutions/vue-ui/styles.css'
 ```
 
+If your app already has a Tailwind CSS v4 theme with shadcn-vue tokens, import
+the Tailwind integration in your app stylesheet instead:
+
+```css
+@import "tailwindcss";
+@import "@starter-solutions/vue-ui/tailwind.css";
+```
+
+This registers the component classes and animation utilities with your
+existing Tailwind build.
+
 ## Imports
 
 Use the root barrel when convenience is more important than import locality:
